@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Candle</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #fddde6;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .candle-container {
+      position: relative;
+      width: 60px;
+    }
+
+    .candle {
+      width: 20px;
+      height: 100px;
+      background-color: #FFD700;
+      margin: auto;
+      position: relative;
+      border-radius: 5px;
+    }
+
+    .flame {
+      width: 15px;
+      height: 30px;
+      background-color: orange;
+      border-radius: 50%;
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: flicker 0.3s infinite alternate;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0.9; transform: translateX(-50%) translateY(0); }
+      100% { opacity: 1; transform: translateX(-50%) translateY(-3px); }
+    }
+
+    .happy-birthday-Ndooy-ILY-So-much {
+      font-size: 2rem;
+      color: #FF1493;
+      margin-top: 20px;
+      display: none;
+      animation: appear 1s ease forwards;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="candle-container" onclick="blowOut()">
+    <div class="candle">
+      <div class="flame" id="flame"></div>
+    </div>
+    <div class="happy-birthday" id="message">Happy Birthday Nada!</div>
+  </div>
+
+  <script>
+    function blowOut() {
+      const flame = document.getElementById("flame");
+      const message = document.getElementById("message");
+
+      // اخفاء اللهب وعرض رسالة عيد الميلاد
+      flame.style.opacity = 0;
+      message.style.display = "block";
+    }
+  </script>
+</body>
+</html>
